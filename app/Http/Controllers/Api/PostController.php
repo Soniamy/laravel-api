@@ -12,7 +12,7 @@ class PostController extends Controller
 {
     public function index(){
 
-         $posts = Post::all();
+         $posts = Post::with('category' , 'technologies')->paginate(3);
 
         return response()->json([
             'success' => true,
@@ -21,7 +21,7 @@ class PostController extends Controller
     }
     public function show(string $slug){
         
-         $post = Post::where('slug', $slug)->firstOrFail();
+        $post = Post::where('slug', $slug)->firstOrFail();
 
     return response()->json([
         'success' => true,
