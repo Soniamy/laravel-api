@@ -26,7 +26,7 @@ class PostSeeder extends Seeder
         Post::truncate();
         Schema::enableForeignKeyConstraints();
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 30; $i++) {
             $title = fake()->sentence();
         
             $slug = Str::slug($title);
