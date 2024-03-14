@@ -12,7 +12,7 @@ class PostController extends Controller
 {
     public function index(){
 
-         $posts = Post::with('category' , 'technologies')->paginate(3);
+         $posts = Post::with('category' , 'technologies')->paginate(6);
 
         return response()->json([
             'success' => true,
